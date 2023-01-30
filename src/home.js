@@ -11,8 +11,14 @@ const Home = () => {
 
     return (  
         <div className="home">
-         
-    
+         {/* use the javascript.map method to cycle through the blogs and then build sth to render them to page.THe map prevenst repetition and accomodates if a new blog is added */}
+        
+        {blogs.map((blog) =>(
+            <div className="blog-preview" key={blog.id}>
+                <h2>{blog.title}</h2>
+                <p>Written by {blog.author}</p>
+            </div>
+        ))}
         </div>
     );
 }
