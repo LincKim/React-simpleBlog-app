@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import BlogList from "./BlogList";
 const Home = () => {
 
     //State of blogs, allowing for change to put new and also delete
@@ -12,13 +13,8 @@ const Home = () => {
     return (  
         <div className="home">
          {/* use the javascript.map method to cycle through the blogs and then build sth to render them to page.THe map prevenst repetition and accomodates if a new blog is added */}
-        
-        {blogs.map((blog) =>(
-            <div className="blog-preview" key={blog.id}>
-                <h2>{blog.title}</h2>
-                <p>Written by {blog.author}</p>
-            </div>
-        ))}
+        <BlogList blogs={blogs} title="All Blogs"/>
+        {/* <BlogList blogs={blogs.filter ((blog)=>blog.author === 'mario')} title="Mario's Blogs"/> */}
         </div>
     );
 }
