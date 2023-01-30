@@ -1,19 +1,18 @@
+import React, {useState} from "react";
 const Home = () => {
 
-    const handleClick = (e) =>{
-        console.log('Hello Mathai', e);
-    }
+    //State of blogs, allowing for change to put new and also delete
 
-    const handleClickAgain = (name) =>{
-        console.log(`Hello ${name}`);
-    }
+    const [blogs, setBlogs] = useState([
+        {title: 'My new website', body:'lorem ipsum...', author: 'mario', id:1},
+        {title: 'Welcome party!', body:'lorem ipsum...', author: 'yoshi', id:2},
+        {title: 'Web dev top tips', body:'lorem ipsum...', author: 'mario', id:3}
+    ])
+
     return (  
         <div className="home">
-            <h2>HomePage</h2>
-            <button onClick={handleClick}>Click Me</button>
-            <button onClick={(e)=>{
-                handleClickAgain('Jay', e)
-            }}>Click Me again</button>
+         
+    
         </div>
     );
 }
