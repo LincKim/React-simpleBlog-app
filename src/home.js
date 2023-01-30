@@ -10,10 +10,16 @@ const Home = () => {
         {title: 'Web dev top tips', body:'lorem ipsum...', author: 'mario', id:3}
     ])
 
+    const handleDelete =(id) => {
+
+        const newBlogs = blogs.filter((blog)=>blog.id !== id)
+        setBlogs(newBlogs)
+    }
+
     return (  
         <div className="home">
          {/* use the javascript.map method to cycle through the blogs and then build sth to render them to page.THe map prevenst repetition and accomodates if a new blog is added */}
-        <BlogList blogs={blogs} title="All Blogs"/>
+        <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>
         {/* <BlogList blogs={blogs.filter ((blog)=>blog.author === 'mario')} title="Mario's Blogs"/> */}
         </div>
     );
