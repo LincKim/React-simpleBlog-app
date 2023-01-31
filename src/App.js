@@ -1,5 +1,7 @@
 import Navbar from './navbar'
 import Home from './home'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Create from './Create';
 
 function App() {
 
@@ -9,27 +11,43 @@ function App() {
 
 //   const link = "http://www.google.com"
 
+//Switch ensures that only one route shows at any particular time
+
   return (
-    <div className="App">
-      <Navbar/>
-      <div className="content">
 
-        <Home />
-        {/* <h1> {title} </h1>
-        <p>Liked {likes} times </p>
+  <Router>
+        <div className="App">
+          <Navbar/>
+          <div className="content">
 
-        <p>{ 10 }</p>
-        <p> { 'Marvin' } </p>
-        <p>{ [ 'apples ', ' mangoes ', ' avocados'] }</p>
-        <p>{ Math.random() * 10 } </p>
+            <Switch>
+
+              <Route exact path="/"> 
+                <Home/>
+              </Route>
+
+              <Route exact path="/create"> 
+                <Create/>
+              </Route>
+
+            </Switch>
+            {/* <h1> {title} </h1>
+            <p>Liked {likes} times </p>
+
+            <p>{ 10 }</p>
+            <p> { 'Marvin' } </p>
+            <p>{ [ 'apples ', ' mangoes ', ' avocados'] }</p>
+            <p>{ Math.random() * 10 } </p>
 
 
-        <a  href = {link}> Google Site </a> */}
+            <a  href = {link}> Google Site </a> */}
 
 
 
-      </div>
-    </div>
+          </div>
+        </div>
+
+    </Router>
   );
 }
 
